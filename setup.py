@@ -3,11 +3,10 @@
 from distutils.core import setup
 
 appname = 'elks'
-version = __import__(appname).__version__
 
 setup(
     name=appname,
-    version=version,
+    version='1.0.0',
     description='Python bindings for 46elks API.',
     author='Gustaf Hansen',
     author_email='gustaf@linkura.se',
@@ -16,7 +15,7 @@ setup(
     platforms=['any'],
     scripts=[],
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
@@ -24,5 +23,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Communications :: Telephony',
     ],
-    requires=['requests (>=1.0)'],
+    install_requires=['requests>=1.0'],
 )
