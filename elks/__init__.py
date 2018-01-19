@@ -5,7 +5,8 @@ import requests
 
 
 __all__ = [
-    'NumberException', 'ElksException', 'ElksRestClient',
+    'NotASwedishNumberException', 'NumberException',
+    'ElksException', 'ElksRestClient',
     'format_swedish_number'
 ]
 
