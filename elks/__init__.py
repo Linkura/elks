@@ -14,6 +14,10 @@ class NumberException(Exception):
     pass
 
 
+class NotASwedishNumberException(NumberException):
+    pass
+
+
 class ElksException(Exception):
     def __init__(self, status_code, message):
         super(ElksException, self).__init__("%s - %s" % (status_code, message))
@@ -82,7 +86,10 @@ def format_swedish_number(number):
     070 - 123 45 67
     070-12 34 567
     """
-    n = str(number)
+    n = str(number).strip()
+
+    if n.startswith('+') and not n.startswith('+46'):
+        raise NotASwedishNumberException("This number isn't a Swedish number")
 
     # remove all non-numeric characters
     n = re.sub(r'[^0-9]', '', n)
